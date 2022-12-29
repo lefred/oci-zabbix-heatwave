@@ -54,6 +54,18 @@ echo """
 \$IMAGE_FORMAT_DEFAULT	= IMAGE_FORMAT_PNG;
 """ > /etc/zabbix/web/zabbix.conf.php
 
+
+echo """
+[MySQLInstance]
+Description = MySQL HeatWave Database
+Driver      = MariaDB
+Server      = ${mds_ip}
+User        = ${zabbix_name}
+Password    = ${zabbix_password}
+Port        = 3306
+""" > /etc/odbc.ini
+
+
 chown apache. /etc/zabbix/web/zabbix.conf.php
 
 systemctl restart zabbix-server zabbix-agent httpd php-fpm

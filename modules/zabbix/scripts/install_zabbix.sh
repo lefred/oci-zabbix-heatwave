@@ -6,4 +6,4 @@ dnf clean all -y
 dnf module switch-to php:7.4 -y
 dnf install -y zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent 
 dnf install -y mysql-shell
-
+dnf install -y mariadb-connector-odbc mysql-connector-odbc unixODBC unixODBC-devel
